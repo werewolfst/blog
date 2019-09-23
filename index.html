@@ -62,12 +62,16 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-first-docker-book-container-md" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-angular-official-first-md" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/09/20/first-docker-book-container-md/" class="article-date">
-  <time datetime="2019-09-20T02:36:30.000Z" itemprop="datePublished">2019-09-20</time>
+    <a href="/2019/09/20/angular-official-first-md/" class="article-date">
+  <time datetime="2019-09-20T02:51:29.000Z" itemprop="datePublished">2019-09-20</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Angular/">Angular</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -76,7 +80,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/20/first-docker-book-container-md/">first-docker-book-container.md</a>
+      <a class="article-title" href="/2019/09/20/angular-official-first-md/">《Angular官网教程》快速上手笔记</a>
     </h1>
   
 
@@ -84,7 +88,80 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="《第一本Docker书》笔记"><a href="#《第一本Docker书》笔记" class="headerlink" title="《第一本Docker书》笔记"></a>《第一本Docker书》笔记</h1><h2 id="Docker容器"><a href="#Docker容器" class="headerlink" title="Docker容器"></a>Docker容器</h2><h3 id="打开一个ubuntu-bash"><a href="#打开一个ubuntu-bash" class="headerlink" title="打开一个ubuntu bash"></a>打开一个ubuntu bash</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -i -t ubuntu /bin/bash</span><br></pre></td></tr></table></figure></code></pre><h3 id="容器命名"><a href="#容器命名" class="headerlink" title="容器命名"></a>容器命名</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --name test_container -i -t ubuntu /bin/bash</span><br></pre></td></tr></table></figure></code></pre><h3 id="创建容器"><a href="#创建容器" class="headerlink" title="创建容器"></a>创建容器</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run</span><br></pre></td></tr></table></figure></code></pre><h3 id="创建容器但不运行它"><a href="#创建容器但不运行它" class="headerlink" title="创建容器但不运行它"></a>创建容器但不运行它</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker create</span><br></pre></td></tr></table></figure></code></pre><h3 id="重新启动已经停止的容器的两种方式"><a href="#重新启动已经停止的容器的两种方式" class="headerlink" title="重新启动已经停止的容器的两种方式"></a>重新启动已经停止的容器的两种方式</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker start/restart NAME/ID</span><br></pre></td></tr></table></figure></code></pre><h3 id="查看运行中的容器"><a href="#查看运行中的容器" class="headerlink" title="查看运行中的容器"></a>查看运行中的容器</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker ps</span><br></pre></td></tr></table></figure></code></pre><h3 id="附着到容器上"><a href="#附着到容器上" class="headerlink" title="附着到容器上"></a>附着到容器上</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker attach NAME/ID</span><br></pre></td></tr></table></figure></code></pre><h3 id="创建守护式容器"><a href="#创建守护式容器" class="headerlink" title="创建守护式容器"></a>创建守护式容器</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --name daemon_dave -d ubuntu /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot;</span><br></pre></td></tr></table></figure></code></pre><h3 id="获取容器日志"><a href="#获取容器日志" class="headerlink" title="获取容器日志"></a>获取容器日志</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker logs daemon_dave</span><br></pre></td></tr></table></figure></code></pre><h3 id="监控容器日志"><a href="#监控容器日志" class="headerlink" title="监控容器日志"></a>监控容器日志</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker logs -f daemon_dave</span><br></pre></td></tr></table></figure></code></pre><h3 id="获取日志的某一片段"><a href="#获取日志的某一片段" class="headerlink" title="获取日志的某一片段"></a>获取日志的某一片段</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker logs --tail 10 daemon_dave</span><br></pre></td></tr></table></figure></code></pre><h3 id="跟踪容器的最新日志"><a href="#跟踪容器的最新日志" class="headerlink" title="跟踪容器的最新日志"></a>跟踪容器的最新日志</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker logs --tail 0 -f daemon_dave</span><br></pre></td></tr></table></figure></code></pre><h3 id="指定docker的日志驱动"><a href="#指定docker的日志驱动" class="headerlink" title="指定docker的日志驱动"></a>指定docker的日志驱动</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --log-driver=&quot;syslog&quot; --name daemon_dwayne -d ubuntu /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot;</span><br></pre></td></tr></table></figure></code></pre><h3 id="查看守护式容器的进程"><a href="#查看守护式容器的进程" class="headerlink" title="查看守护式容器的进程"></a>查看守护式容器的进程</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker top daemon_dave</span><br></pre></td></tr></table></figure></code></pre><h3 id="查看各个容器的统计信息"><a href="#查看各个容器的统计信息" class="headerlink" title="查看各个容器的统计信息"></a>查看各个容器的统计信息</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker stats daemon_dave daemon_dwayne ...</span><br></pre></td></tr></table></figure></code></pre><h3 id="在容器内部运行进程"><a href="#在容器内部运行进程" class="headerlink" title="在容器内部运行进程"></a>在容器内部运行进程</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker exec -d daemon_dave touch /etc/new_config_file</span><br></pre></td></tr></table></figure></code></pre><h3 id="在容器内运行交互命令"><a href="#在容器内运行交互命令" class="headerlink" title="在容器内运行交互命令"></a>在容器内运行交互命令</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker exec -t -i daemon_dave /bin/bash</span><br></pre></td></tr></table></figure></code></pre><h3 id="停止守护式容器"><a href="#停止守护式容器" class="headerlink" title="停止守护式容器"></a>停止守护式容器</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker stop daemon_dave/ID</span><br></pre></td></tr></table></figure></code></pre><h3 id="显示最后的X个容器"><a href="#显示最后的X个容器" class="headerlink" title="显示最后的X个容器"></a>显示最后的X个容器</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker ps -n X</span><br></pre></td></tr></table></figure></code></pre><h3 id="自动重启容器"><a href="#自动重启容器" class="headerlink" title="自动重启容器"></a>自动重启容器</h3><ul>
+        <h2 id="Angular模板语法的五个常用特性"><a href="#Angular模板语法的五个常用特性" class="headerlink" title="Angular模板语法的五个常用特性"></a>Angular模板语法的五个常用特性</h2><ul>
+<li><p><strong>*ngFor</strong></p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngFor</span>=<span class="string">"let product of products"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span></span><br><span class="line">        &#123;&#123; product.name &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>*ngIF</strong></p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> *<span class="attr">ngIf</span>=<span class="string">"product.descritpion"</span>&gt;</span></span><br><span class="line">    Description: &#123;&#123; product.description &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>插值表达式</strong></p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span></span><br><span class="line">    &#123;&#123; product.name &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>属性绑定</strong></p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">title</span>]=<span class="string">"product.name + ' details'"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>事件绑定</strong></p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">"share()"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><ul>
+<li><strong>组件类</strong></li>
+<li><strong>HTML模板</strong></li>
+<li><strong>专属样式</strong></li>
+</ul>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><ul>
+<li><strong>@Input</strong>  <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Input &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"><span class="meta">@Input</span>() product;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><ul>
+<li><strong>@Output</strong>  <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Output, EventEmitter &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"><span class="meta">@Output</span>() notify = <span class="keyword">new</span> EventEmitter();</span><br><span class="line">...</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.stao.me/2019/09/20/angular-official-first-md/" data-id="ck0vunzu1000bfsjlf5pyxdqc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular笔记/">Angular笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-first-docker-book-container-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/20/first-docker-book-container-md/" class="article-date">
+  <time datetime="2019-09-20T02:36:30.000Z" itemprop="datePublished">2019-09-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Docker/">Docker</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/20/first-docker-book-container-md/">《第一本Docker书》容器部分笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Docker容器"><a href="#Docker容器" class="headerlink" title="Docker容器"></a>Docker容器</h2><h3 id="打开一个ubuntu-bash"><a href="#打开一个ubuntu-bash" class="headerlink" title="打开一个ubuntu bash"></a>打开一个ubuntu bash</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -i -t ubuntu /bin/bash</span><br></pre></td></tr></table></figure></code></pre><h3 id="容器命名"><a href="#容器命名" class="headerlink" title="容器命名"></a>容器命名</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --name test_container -i -t ubuntu /bin/bash</span><br></pre></td></tr></table></figure></code></pre><h3 id="创建容器"><a href="#创建容器" class="headerlink" title="创建容器"></a>创建容器</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run</span><br></pre></td></tr></table></figure></code></pre><h3 id="创建容器但不运行它"><a href="#创建容器但不运行它" class="headerlink" title="创建容器但不运行它"></a>创建容器但不运行它</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker create</span><br></pre></td></tr></table></figure></code></pre><h3 id="重新启动已经停止的容器的两种方式"><a href="#重新启动已经停止的容器的两种方式" class="headerlink" title="重新启动已经停止的容器的两种方式"></a>重新启动已经停止的容器的两种方式</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker start/restart NAME/ID</span><br></pre></td></tr></table></figure></code></pre><h3 id="查看运行中的容器"><a href="#查看运行中的容器" class="headerlink" title="查看运行中的容器"></a>查看运行中的容器</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker ps</span><br></pre></td></tr></table></figure></code></pre><h3 id="附着到容器上"><a href="#附着到容器上" class="headerlink" title="附着到容器上"></a>附着到容器上</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker attach NAME/ID</span><br></pre></td></tr></table></figure></code></pre><h3 id="创建守护式容器"><a href="#创建守护式容器" class="headerlink" title="创建守护式容器"></a>创建守护式容器</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --name daemon_dave -d ubuntu /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot;</span><br></pre></td></tr></table></figure></code></pre><h3 id="获取容器日志"><a href="#获取容器日志" class="headerlink" title="获取容器日志"></a>获取容器日志</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker logs daemon_dave</span><br></pre></td></tr></table></figure></code></pre><h3 id="监控容器日志"><a href="#监控容器日志" class="headerlink" title="监控容器日志"></a>监控容器日志</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker logs -f daemon_dave</span><br></pre></td></tr></table></figure></code></pre><h3 id="获取日志的某一片段"><a href="#获取日志的某一片段" class="headerlink" title="获取日志的某一片段"></a>获取日志的某一片段</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker logs --tail 10 daemon_dave</span><br></pre></td></tr></table></figure></code></pre><h3 id="跟踪容器的最新日志"><a href="#跟踪容器的最新日志" class="headerlink" title="跟踪容器的最新日志"></a>跟踪容器的最新日志</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker logs --tail 0 -f daemon_dave</span><br></pre></td></tr></table></figure></code></pre><h3 id="指定docker的日志驱动"><a href="#指定docker的日志驱动" class="headerlink" title="指定docker的日志驱动"></a>指定docker的日志驱动</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --log-driver=&quot;syslog&quot; --name daemon_dwayne -d ubuntu /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot;</span><br></pre></td></tr></table></figure></code></pre><h3 id="查看守护式容器的进程"><a href="#查看守护式容器的进程" class="headerlink" title="查看守护式容器的进程"></a>查看守护式容器的进程</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker top daemon_dave</span><br></pre></td></tr></table></figure></code></pre><h3 id="查看各个容器的统计信息"><a href="#查看各个容器的统计信息" class="headerlink" title="查看各个容器的统计信息"></a>查看各个容器的统计信息</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker stats daemon_dave daemon_dwayne ...</span><br></pre></td></tr></table></figure></code></pre><h3 id="在容器内部运行进程"><a href="#在容器内部运行进程" class="headerlink" title="在容器内部运行进程"></a>在容器内部运行进程</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker exec -d daemon_dave touch /etc/new_config_file</span><br></pre></td></tr></table></figure></code></pre><h3 id="在容器内运行交互命令"><a href="#在容器内运行交互命令" class="headerlink" title="在容器内运行交互命令"></a>在容器内运行交互命令</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker exec -t -i daemon_dave /bin/bash</span><br></pre></td></tr></table></figure></code></pre><h3 id="停止守护式容器"><a href="#停止守护式容器" class="headerlink" title="停止守护式容器"></a>停止守护式容器</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker stop daemon_dave/ID</span><br></pre></td></tr></table></figure></code></pre><h3 id="显示最后的X个容器"><a href="#显示最后的X个容器" class="headerlink" title="显示最后的X个容器"></a>显示最后的X个容器</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker ps -n X</span><br></pre></td></tr></table></figure></code></pre><h3 id="自动重启容器"><a href="#自动重启容器" class="headerlink" title="自动重启容器"></a>自动重启容器</h3><ul>
 <li><p>设置为always，无论错误代码是什么都会自动重启容器</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --restart=always -name daemon_dave -d ubuntu /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot;</span><br></pre></td></tr></table></figure>
 </li>
@@ -121,10 +198,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.stao.me/2019/09/20/first-docker-book-container-md/" data-id="ck0rimyyw0000jqjlk0clj7kk" class="article-share-link">Share</a>
+      <a data-url="http://www.stao.me/2019/09/20/first-docker-book-container-md/" data-id="ck0vunzt40000fsjl42n78xjk" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dokcer-container/">Dokcer container</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker-container/">Docker container</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker笔记/">Docker笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dokcer/">Dokcer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
 
     </footer>
   </div>
@@ -140,13 +217,20 @@
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a></li></ul>
+    </div>
+  </div>
+
 
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dokcer-container/">Dokcer container</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular/">Angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular笔记/">Angular笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker-container/">Docker container</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker笔记/">Docker笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dokcer/">Dokcer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
     </div>
   </div>
 
@@ -156,7 +240,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Dokcer-container/" style="font-size: 10px;">Dokcer container</a>
+      <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/Angular笔记/" style="font-size: 10px;">Angular笔记</a> <a href="/tags/Docker-container/" style="font-size: 10px;">Docker container</a> <a href="/tags/Docker笔记/" style="font-size: 10px;">Docker笔记</a> <a href="/tags/Dokcer/" style="font-size: 10px;">Dokcer</a> <a href="/tags/笔记/" style="font-size: 20px;">笔记</a>
     </div>
   </div>
 
@@ -178,7 +262,11 @@
       <ul>
         
           <li>
-            <a href="/2019/09/20/first-docker-book-container-md/">first-docker-book-container.md</a>
+            <a href="/2019/09/20/angular-official-first-md/">《Angular官网教程》快速上手笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/20/first-docker-book-container-md/">《第一本Docker书》容器部分笔记</a>
           </li>
         
       </ul>
